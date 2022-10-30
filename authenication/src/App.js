@@ -7,6 +7,7 @@ import {
   createRoutesFromElements
 } from "react-router-dom";
 import DashBoard from './dashboard.js';
+import Signup from "./signup.js";
 
 
 
@@ -14,9 +15,11 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={ <Login/> }/>
+      <Route path='/signup' element={ <Signup/> }/>
       <Route path='/dashboard' element={ <DashBoard/> }/>
     </Routes>
   );
 }
 
 export default App;
+

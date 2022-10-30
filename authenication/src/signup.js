@@ -8,12 +8,12 @@ import IconButton from '@mui/material/IconButton';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import InputAdornment from '@mui/material/InputAdornment';
 import KeyIcon from '@mui/icons-material/Key';
+import EmailIcon from '@mui/icons-material/Email';
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import DashBoard from "./dashboard.js";
-import Signup from "./signup.js"
 
 
-function Login(props) {
+function Signup(props) {
 
     const [password, setPassword] = useState("password");
     const handlePasswordVisibility = () => {
@@ -26,10 +26,10 @@ function Login(props) {
     const navigate = useNavigate();
 
     const navigateToDashboard = () => {
-        navigate("dashboard");
+        navigate("/dashboard");
     }
-    const navigateToSignup = () => {
-        navigate("signup");
+    const navigateToLogin = () => {
+        navigate("/");
     }
     return(
 
@@ -40,6 +40,16 @@ function Login(props) {
             </div>
             <div className="divider"></div>
             <div style = {{fontSize: "40px", margin: "auto", textAlign: "center", width: "100%"}}><b>Welcome to Quest2Learn</b></div>
+            <div className="divider"></div>
+            <div style = {{fontSize: "30px", margin: "auto", textAlign: "center", width: "100%"}}><b>Signup Here</b></div>
+            <div className="divider"></div>
+            <TextField label = {"Enter your email"} style = {{width: "600px", margin: "auto", textAlign: "center"}} variant = "outlined" InputProps = {{
+                endAdornment: (
+                    <InputAdornment position="start">
+                        <EmailIcon />
+                    </InputAdornment>
+                ),}}
+            ></TextField>
             <div className="divider"></div>
             <TextField label = {"Enter Username"} style = {{width: "600px", margin: "auto", textAlign: "center"}} variant = "outlined" InputProps = {{
                 endAdornment: (
@@ -60,15 +70,15 @@ function Login(props) {
             <Button variant = {"contained"} style = {{width: "200px", margin: "auto", backgroundColor: "rgba(46, 107, 162, 1)"}} onClick = {() => {
                 //put your code here to verify login
                 navigateToDashboard()
-            }}>Log in</Button>
+            }}>Sign up</Button>
             <div className="smalldivider"></div>
             <Button variant = {"contained"} style = {{width: "200px", margin: "auto", backgroundColor: "rgba(46, 107, 162, 1)"}} onClick = {() => {
                 //put your code here to verify login
-                navigateToSignup()}}>Sign Up</Button>
+                navigateToLogin()}}>Login</Button>
 
         </div>
     );
 }
 
 
-export default Login;
+export default Signup;
